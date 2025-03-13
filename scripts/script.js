@@ -62,9 +62,19 @@ function displayCategories(categories){
 const displayVideos = (videos) =>{
     const videosContainer = document.getElementById("videos-container");
         videosContainer.innerHTML = "";
+
+        if(videos.length == 0){
+            videosContainer.innerHTML = `
+            <div class="col-span-full text-center space-y-2 mt-5">
+                <img class="inline" src="images/Icon.png" alt="Error photo">
+                <h3 class="text-2xl">Oops! There's no content available here.</h3>
+             </div>
+            `;
+            return;
+        }
+
     // loop through videos
     videos.forEach(video => {
-        // console.log(video)
 
         const videoCard = document.createElement("div");
         videoCard.innerHTML = `
