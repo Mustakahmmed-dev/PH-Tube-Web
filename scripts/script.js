@@ -142,9 +142,10 @@ const displayVideos = (videos) =>{
                         </div>
                         </div>
                     </div>
+
                     <div>
                         <h2 class="text-2xl">${video.title}</h2>
-                        <p class="text-gray-400 flex gap-2">${video.authors[0].profile_name} <img class="w-6 h-6" src="./images/verified.png" alt=""></p>
+                        <p class="text-gray-400 flex gap-2">${video.authors[0].profile_name} ${video.authors[0].verified == true ? `<img class="w-6 h-6" src="./images/verified.png" alt="">` : ``} </p>
                         <p class="text-gray-400"> ${video.others.views} </p>
                     </div>
                 </div>
